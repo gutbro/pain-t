@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#layout {
+  background-color: rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: start;
+}
+#layout > * {
+  padding: 15px;
+  flex: 1 1 25%;
+}
+#layout #paletteWrap {
+  flex-basis: 100%;
+  text-align: center;
+}
+#layout #toolsWrap {
+  flex-basis: 100%;
+  text-align: center;
+  background-color: silver;
+}
+#layout #toolsWrap .tool {
+  background-color: silver;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  padding: 7px;
+  display: inline-block;
+  font-size: 1em;
+  cursor: pointer;
+}
+#layout #toolsWrap .tool:before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+#layout #toolsWrap .tool:hover {
+  background-color: gray;
+}
+#layout #toolsWrap .tool.current {
+  background-color: orange;
+}
+#layout #toolsWrap .tool.current:hover {
+  background-color: gray;
+}
+
+.pencil:before {
+  background-image: url(../icons/pencil.png);
+}
+
+.bucket:before {
+  background-image: url(../icons/bucket.png);
+}
+
+.line:before {
+  background-image: url(../icons/line.png);
+}
+
+#pain-t {
+  border: 1px solid red;
+}
+#pain-t.pencil {
+  cursor: url(../cursor/pencil.png) 0 24, auto;
+}
+#pain-t.bucket {
+  cursor: url(../cursor/bucket.png) 0 24, auto;
+}
+#pain-t.eyedropper {
+  cursor: url(../cursor/eyedropper.png) 0 24, auto;
+}
+#pain-t.line {
+  cursor: url(../cursor/line.png) 0 24, auto;
+}
+
+.palette-color {
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  border-radius: 3px;
+  padding: 7px;
+  margin: 3px;
+  background-color: silver;
+  color: white;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.5), 0 -1px rgba(0, 0, 0, 0.5), 1px 0 rgba(0, 0, 0, 0.5), -1px 0 rgba(0, 0, 0, 0.5);
+}
+.palette-color.current {
+  border-color: rgba(0, 0, 0, 0.9);
+  border-width: 3px;
+  padding: 5px;
+}
